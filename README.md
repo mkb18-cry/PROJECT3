@@ -1,24 +1,19 @@
-# README
+# Aplikasi Website Artikel KedaiLabs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Tampilan Home
 
-Things you may want to cover:
+   ![](./Home.png)
 
-* Ruby version
+   ![Home1](./Home1.png)
 
-* System dependencies
+2. Tampilan Sign Up
 
-* Configuration
+   ![](./daftar.png)
 
-* Database creation
+3. Tampilan Login
 
-* Database initialization
+   ![](./masuk.png)
 
-* How to run the test suite
+4. Tampilan Buat Tutorial
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+   ![](./buattutorial.png)
