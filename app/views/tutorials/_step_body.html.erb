@@ -1,0 +1,11 @@
+<% if step.present? %>
+<div class="container">
+    <strong><%= step %>.
+    <% get_body.each do |gb| %>
+        <%= gb.title.titleize %></strong><br>
+        <%= sanitize gb.body %>
+    <% end %>
+<% else %>
+    nill value
+</div>
+<% end %>

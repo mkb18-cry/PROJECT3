@@ -1,0 +1,59 @@
+<!-- render partial jumbotron -->
+<%= render 'application/jumbotron' %>
+
+<nav class="navbar bg-transparent">
+  <a class="buat-tutorial">
+    <!-- tampilkan btn bila session user true -->
+    <% if user_signed_in? %>
+      <%= link_to 'Buat Tutorial', new_tutorial_path, { class: 'btn-buat btn btn-outline-success'} %>
+    <% end %>
+    <!-- end -->
+  </a>
+  <!-- form inline -->
+  <%= form_tag root_path, method: :get, class: 'form-inline my-2 my-lg-0' do %>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <!-- <i class=""> disini icon search </i> -->
+    </div>
+    <%= text_field_tag :search, nil, { class: 'form-control mr-sm-2', placeholder: 'Cari tutorial'} %>
+    <%= submit_tag "Cari", class: 'btn btn-outline-success my-sm-0' %>
+  </div>
+  <% end %>
+  <!-- end form inline -->
+</nav>
+
+<div class="container">
+  <div class="row">
+    <!-- each looping tutorial table -->
+    <% @tutorials.each do |tutorial| %>
+    <div class="col-md-4 card-deck">
+      <!-- card list tutorial -->
+      <div class="card bg-light" id="tutorial">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            <%= tutorial.title.titleize %>
+          </h5>
+          <p class="card-text text-right">
+            <small>
+              Diperbarui
+              <%= I18n.l (tutorial.updated_at.to_date) %>
+              oleh
+              <%= tutorial.user.name %>
+            </small>
+          </p>
+          <%= render 'application/image_condisi.erb', tutorial: tutorial %>
+          
+          <%= link_to 'Mulai', tutorial_path(tutorial), class: 'btn tutorial-btn'%>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <% end %>
+    <!-- end each -->
+  </div>
+  <br>
+  <!-- pagination -->
+  <%= will_paginate @tutorials, list_classes: %w(pagination justify-content-center),
+                                  previous_label: '&laquo', next_label: '&raquo' %>
+  <br>
+</div>

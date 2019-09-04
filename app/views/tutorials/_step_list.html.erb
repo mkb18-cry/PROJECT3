@@ -1,0 +1,7 @@
+<ul>
+    <% step_list.each do |sl| %>
+    <li class="p-3 mb-2">
+        <strong><%= link_to  "#{sl.no}. #{sl.title.titleize}" , {controller: 'tutorials', action: 'show', step: sl.no} %></strong>
+    </li>
+    <% end %>
+</ul>

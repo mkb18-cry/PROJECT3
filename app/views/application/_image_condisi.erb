@@ -1,0 +1,11 @@
+<% if tutorial.tag_programming_id == 1 %>
+        <%= image_tag "icon/_0016_RUBY.jpg", class: 'img-fluid' %>
+<% elsif tutorial.tag_programming_id == 2 %>
+        <%= image_tag "icon/_0027_PHYTON.jpg", class: 'img-fluid' %>
+<% elsif tutorial.tag_programming_id == 3 %>
+        <%= image_tag "icon/_0031_JavaScript.jpg", class: 'img-fluid' %>
+<% elsif tutorial.tag_programming_id == 4 %>
+        <%= image_tag "icon/_0030_Java.jpg", class: 'img-fluid' %>
+<% else %>
+        <%= image_tag "icon/_0028_PHP.jpg", class: 'img-fluid' %>
+<% end %>

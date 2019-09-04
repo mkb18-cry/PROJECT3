@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Sunting Tutorial</h1>
+
+    <%= render 'form', tutorial: @tutorial %>
+
+    <div></div>
+    <%= link_to 'Lihat', @tutorial, { class: 'btn btn-outline-info', style: '' } %>
+    <%= link_to 'Kembali', root_path, { class: 'btn btn-outline-secondary'} %>
+</div>

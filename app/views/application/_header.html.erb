@@ -1,0 +1,19 @@
+<div class="app-header">
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to image_tag('kedailogo.png', size: '46x46', id: 'logo') + ' Kedailabs' , root_path, class: 'navbar-brand' %>
+    
+    <div class="dropdown">
+      <a class="btn-user btn btn-info dropdown-toggle" href='#' role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= user_signed_in? ? current_user.name : 'Halo teman' %>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <% if user_signed_in? %>
+          <%= link_to 'Keluar', destroy_user_session_path, { class: 'dropdown-item', method: 'delete' } %>
+        <% else %>
+          <%= link_to 'Daftar', new_user_registration_path, { class: 'dropdown-item' }%>
+          <%= link_to 'Masuk', new_user_session_path, { class: 'dropdown-item' } %>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+</div>

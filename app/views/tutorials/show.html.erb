@@ -1,0 +1,24 @@
+<!-- Nav tabs -->
+<div class='row' id='step'>
+  <div class='col-md-2' id='sidenav'>
+    <%= render 'step_list', step_list: @step_list %>
+  </div>
+
+  <!-- Tab panes -->
+  <div class='col-md-7 main' id='content'>
+    <%= render 'step_body', get_body: @get_body, step: @step %>
+  </div>
+
+  <div class="col-md-3">
+    <% if user_signed_in? %>
+      <% if policy(@tutorial).edit? %>
+      <%= link_to 'Sunting', edit_tutorial_path, { class: 'btn btn-outline-info btn-sm' } %>
+      <% end %>
+      <% if policy(@tutorial).destroy? %>
+        <%= link_to 'Hapus', tutorial_path, method: :delete, data: {confirm: 'Apa anda yakin?'}, class: 'btn btn-outline-danger btn-sm' %>
+      <% end %>
+    <% end %>
+    
+  </div>
+  <br>
+</div>

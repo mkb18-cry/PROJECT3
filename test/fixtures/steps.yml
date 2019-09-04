@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tutorial: one
+  'no': 1
+  title: MyString
+  body: MyText
+
+two:
+  tutorial: two
+  'no': 1
+  title: MyString
+  body: MyText

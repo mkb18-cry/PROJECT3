@@ -1,0 +1,38 @@
+#sidenav {
+    display: table-cell;
+}
+
+#sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  padding-top: 20px;
+
+  border-radius: 25px;
+  border-right: 2px solid #73AD21;
+  width: 200px;
+  height: 150px;
+}
+#sidenav li {
+    outline: 0;
+    display: table;
+    margin-left: 20px;
+    border-bottom: 2px solid rgb(151, 151, 151);
+}
+#sidenav a {
+    color: #5fa2db;
+}
+#sidenav a:link, a:visited {
+    text-decoration: none;
+    cursor:progress;
+}
+#sidenav a:hover {
+    color: #6b98c0;
+}
+
+#content {
+    padding-top: 30px;
+}
+
+#content strong {
+    font-size: 20px;
+}

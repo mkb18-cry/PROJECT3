@@ -1,0 +1,16 @@
+<div class="row nested-fields">
+  <div class="col-md-2">
+    <%= f.input :no, label: 'No', required: false %>
+  </div>
+  <div class="col-md-8">
+    <%= f.input :title, label: 'Judul', required: false %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to_remove_association "hapus step", f, class: 'btn btn-outline-danger btn-sm btn-remove' %>
+  </div>
+
+  <div class="col-md-10 body">
+    <%= f.input :body, label: 'Konten', as: :summernote %>
+  </div>
+
+</div>

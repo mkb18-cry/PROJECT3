@@ -1,0 +1,41 @@
+<% if @tutorial.errors.any? %>
+<div class="alert alert-danger" role="alert">
+  <ul>
+    <% @tutorial.errors.full_messages.each do |error| %>
+    <li>
+      <%= error %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<!-- form -->
+<%= simple_form_for (@tutorial) do |f| %>
+<div class="form-inputs">
+  <%= f.label :tag_programming_id %><br>
+  <%= f.collection_radio_buttons :tag_programming_id,
+      [[1, 'Ruby'], [2, 'Python'], [3, 'JavaScript'], [4, 'Java'],[5, 'PHP']], 
+      :first, :last %>
+  <hr>
+
+  <%= f.input :title, label: 'Judul' %>
+  <hr>
+</div>
+
+<!-- nested-form steps -->
+<div class='steps'>
+  <%= f.simple_fields_for :steps do |builder| %>
+  <!-- render partial step_fields -->
+  <%= render 'step_fields', f: builder %>
+  <% end %>
+</div>
+<!-- end nested-form -->
+
+<div class="form-actions">
+  <%= f.button :submit, class: 'btn btn-outline-success' %>
+  <%= link_to_add_association 'Tambah Step', f, :steps, class: 'btn btn-outline-primary', data: { 
+      association_insertion_node: '.steps', association_insertion_method: :append } %>
+</div>
+<% end %>
+<!-- end form -->
